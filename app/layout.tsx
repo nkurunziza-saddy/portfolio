@@ -11,7 +11,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: siteConfig.name,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
   keywords: [
     "saddy",
@@ -27,30 +27,25 @@ export const metadata: Metadata = {
     "rwanda",
     "africa",
   ],
-  authors: [
-    {
-      name: "Nkurunziza Saddy",
-      url: "https://github.com/nkurunziza-saddy",
-    },
-  ],
+  authors: [{ name: "Nkurunziza Saddy", url: siteConfig.links.github }],
   creator: "saddy",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_APP_URL!,
+    url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [`${siteConfig.url}/og`],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: "@saddy",
+    images: [`${siteConfig.url}/og`],
+    creator: "@nk-saddy",
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: "/favicon.ico" },
 };
 
 const geistSans = Geist({
