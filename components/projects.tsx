@@ -3,10 +3,10 @@ import React from "react";
 
 const projects = [
   {
-    title: "Quantura",
+    title: "Dukora",
     description:
       "A modern inventory management system featuring real-time stock tracking, automated alerts, analytics dashboards, ai assistant, business scheduling and meetings and accounting tools to optimize business operations.",
-    href: "https://quantura-management.vercel.app/",
+    href: "https://dukora.vercel.app/",
   },
   {
     title: "Tiza",
