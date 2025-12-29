@@ -18,7 +18,7 @@ const projects = [
     title: "Lexi",
     description:
       "A simple yet efficient open-source rich text editor alternative",
-   href: "https://lexi-editor.vercel.app/",
+   href: "https://uruhuu.vercel.app/blocks/editor",
   },
 ];
 export const Projects = () => {
