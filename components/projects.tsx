@@ -20,6 +20,11 @@ const projects = [
       "A simple yet efficient open-source rich text editor alternative",
    href: "https://uruhuu.vercel.app/blocks/editor",
   },
+{
+title: "Uruhuu",
+description: "A base-ui ui component. Shadcn structure."
+href: "https://uruhuu.vercel.app"
+},
 ];
 export const Projects = () => {
   return (
