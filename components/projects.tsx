@@ -21,9 +21,9 @@ const projects = [
    href: "https://uruhuu.vercel.app/blocks/editor",
   },
 {
-title: "Uruhuu",
-description: "A base-ui ui component. Shadcn structure."
-href: "https://uruhuu.vercel.app"
+title: "Vizit Africa",
+description: "A premium travel concierge interface blending modern editorial design with traditional Rwandan aesthetics, specifically inspired by geometric Imigongo art."
+href: "https://vizit-africa-imigongo.vercel.app"
 },
 ];
 export const Projects = () => {
