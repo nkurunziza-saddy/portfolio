@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import React from "react";
 
@@ -22,7 +23,7 @@ const projects = [
   },
 {
 title: "Vizit Africa",
-description: "A premium travel concierge interface blending modern editorial design with traditional Rwandan aesthetics, specifically inspired by geometric Imigongo art."
+description: "A premium travel concierge interface blending modern editorial design with traditional Rwandan aesthetics, specifically inspired by geometric Imigongo art.",
 href: "https://vizit-africa-imigongo.vercel.app"
 },
 ];
