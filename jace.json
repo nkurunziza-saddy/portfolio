@@ -3,7 +3,7 @@
     {
       "name": "Projects",
       "description": "Manage projects",
-      "path": "./projects.json",
+      "path": "projects.json",
       "icon": "gear"
     }
   ]
