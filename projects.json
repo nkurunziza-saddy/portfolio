@@ -1,0 +1,106 @@
+{
+  "$schema": "./projects-schema.json",
+  "projects": [
+    {
+        "title": "Dukora",
+        "desc": "Modern inventory management with real-time stock tracking, automated alerts, analytics dashboards, AI assistant, and accounting tools.",
+        "href": "https://dukora.vercel.app/",
+        "tags": [
+            "SaaS",
+            "TypeScript",
+            "AI"
+        ],
+        "year": "2024",
+        "featured": true
+    },
+    {
+        "title": "Muni Docs",
+        "desc": "A collaborative documentation platform for university resources and academic sharing.",
+        "href": "https://muni-docs.vercel.app/",
+        "tags": [
+            "Next.js",
+            "Documentation",
+            "Open Source"
+        ],
+        "year": "2024",
+        "featured": true
+    },
+    {
+        "title": "Lexi",
+        "desc": "Open-source rich text editor alternative focusing on modularity and performance.",
+        "href": "https://uruhuu.vercel.app/blocks/editor",
+        "tags": [
+            "TypeScript",
+            "Open Source"
+        ],
+        "year": "2024",
+        "featured": true
+    },
+    {
+        "title": "Tiza",
+        "desc": "Minimal solution for managing books, students, and lendings for school libraries.",
+        "href": "https://nkurunziza-saddy.github.io/tiza",
+        "tags": [
+            "TypeScript",
+            "Web App"
+        ],
+        "year": "2024",
+        "featured": false
+    },
+    {
+        "title": "Vizit Africa",
+        "desc": "Premium travel concierge interface inspired by geometric Imigongo art.",
+        "href": "https://vizit-africa-complete.vercel.app",
+        "tags": [
+            "Design",
+            "TypeScript"
+        ],
+        "year": "2024",
+        "featured": false
+    },
+    {
+        "title": "Reformation Chariot",
+        "desc": "A specialized reading application dedicated to theological literature and resources.",
+        "href": "https://reformationchariot.com/",
+        "tags": [
+            "Web App",
+            "Education"
+        ],
+        "year": "2023",
+        "featured": false
+    },
+    {
+        "title": "Ishara",
+        "desc": "E-commerce platform for discovering and purchasing unique African art pieces.",
+        "href": "https://github.com/nkurunziza-saddy/ishara",
+        "tags": [
+            "E-commerce",
+            "TypeScript"
+        ],
+        "year": "2023",
+        "featured": false
+    },
+    {
+        "title": "TipTap Editor",
+        "desc": "A free, customizable rich-text editor built with TipTap and Shadcn/ui components.",
+        "href": "https://github.com/nkurunziza-saddy/tiptap-editor",
+        "tags": [
+            "Library",
+            "UI/UX"
+        ],
+        "year": "2024",
+        "featured": false
+    },
+    {
+        "title": "Oops",
+        "desc": "A minimalist typing speed application to track and improve words-per-minute (WPM).",
+        "href": "https://oops-again.vercel.app/",
+        "tags": [
+            "TypeScript",
+            "Utility"
+        ],
+        "year": "2024",
+        "featured": false
+    }
+  ]
+}

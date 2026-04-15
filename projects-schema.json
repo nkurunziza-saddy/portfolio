@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "desc", "href", "tags", "year", "featured"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The title of the project"
+          },
+          "desc": {
+            "type": "string",
+            "description": "Short description of the project"
+          },
+          "href": {
+            "type": "string",
+            "format": "uri",
+            "description": "Project URL (e.g., website or GitHub repo)"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of technologies or categories"
+          },
+          "year": {
+            "type": "string",
+            "description": "The year the project was created or launched"
+          },
+          "featured": {
+            "type": "boolean",
+            "description": "Whether to highlight this project on the homepage"
+          }
+        }
+      }
+    }
+  },
+  "required": ["projects"]
+}
