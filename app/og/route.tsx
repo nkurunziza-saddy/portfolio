@@ -1,8 +1,6 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/config";
 
-export const runtime = "edge";
-
 export async function GET() {
   const background = "hsl(0 0% 3.9%)";
   const primary = "hsl(0 0% 98%)";

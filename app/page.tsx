@@ -115,7 +115,7 @@ export default function Page() {
                 viewBox="0 0 12 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="opacity-0 transition-[opacity,transform] duration-300 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               >
                 <path
                   d="M3.5 8.5L8.5 3.5M8.5 3.5H4.5M8.5 3.5V7.5"
