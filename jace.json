@@ -1,0 +1,10 @@
+{
+    "files": [
+        {
+            "name": "Projects",
+            "description": "Manage projects",
+            "path": "./projects.json",
+            "icon": "gear"
+        }
+    ]
+}
