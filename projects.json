@@ -2,6 +2,14 @@
   "$schema": "./projects-schema.json",
   "projects": [
     {
+  "title": "Ibuka",
+  "desc": "Digital platform preserving memory and history, providing accessible information and resources related to remembrance.",
+  "href": "https://ibuka.main-95e.workers.dev/en/",
+  "tags": ["Web App", "Education", "History"],
+  "year": "2024",
+  "featured": true
+    },
+    {
       "title": "Dukora",
       "desc": "Modern inventory management with real-time stock tracking, automated alerts, analytics dashboards, AI assistant, and accounting tools.",
       "href": "https://dukora.vercel.app/",
@@ -15,7 +23,7 @@
       "href": "https://muni-docs.vercel.app/",
       "tags": ["Next.js", "Documentation", "Open Source"],
       "year": "2024",
-      "featured": true
+      "featured": false 
     },
     {
       "title": "Lexi",
@@ -23,15 +31,15 @@
       "href": "https://uruhuu.vercel.app/blocks/editor",
       "tags": ["TypeScript", "Open Source"],
       "year": "2024",
-      "featured": true
+      "featured": false
     },
     {
       "title": "Tiza",
       "desc": "Minimal solution for managing books, students, and lendings for school libraries.",
       "href": "https://nkurunziza-saddy.github.io/tiza",
-      "tags": ["TypeScript", "Web App"],
+      "tags": ["Rust", "Software"],
       "year": "2024",
-      "featured": false
+      "featured": true
     },
     {
       "title": "Vizit Africa",
