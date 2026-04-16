@@ -41,7 +41,7 @@
     {
       "title": "Jace",
       "desc": "Zero-config JSON CMS that turns GitHub repositories into manageable dashboards for non-technical users.",
-      "href": "https://jace.sh",
+      "href": "https://jace-cms.vercel.app/",
       "tags": [
         "CMS",
         "Open Source",
