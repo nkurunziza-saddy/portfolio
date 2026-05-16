@@ -12,7 +12,7 @@ export default function Page() {
         <h1 className="text-base font-medium text-foreground tracking-tight">Saddy Nkurunziza</h1>
         <p className="text-sm text-muted-foreground leading-relaxed max-w-[500px]">
           Software engineer focused on building clean, functional, and well-designed digital experiences. Working
-          primarily with Typescript, Go, and Rust.
+          primarily with Typescript, Go, Rust and Python.
         </p>
       </header>
 
