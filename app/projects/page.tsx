@@ -98,6 +98,11 @@ export default function ProjectsPage() {
                 className="text-base font-medium text-foreground hover:text-muted-foreground transition-colors duration-300 inline-flex items-center gap-1.5"
               >
                 {p.title}
+                {p.current && (
+                  <span className="text-[10px] font-mono text-muted-foreground/40 border border-border/40 px-1 rounded-[2px] ml-1 uppercase tracking-tighter">
+                    current
+                  </span>
+                )}
                 <svg
                   aria-hidden="true"
                   role="img"

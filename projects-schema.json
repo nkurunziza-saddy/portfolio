@@ -9,7 +9,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["title", "desc", "href", "tags", "year", "featured"],
+        "required": ["title", "desc", "href", "tags", "year", "featured", "current"],
         "properties": {
           "title": {
             "type": "string",
@@ -38,6 +38,10 @@
           "featured": {
             "type": "boolean",
             "description": "Whether to highlight this project on the homepage"
+          },
+          "current": {
+            "type": "boolean",
+            "description": "Whether this is a project currently being worked on"
           }
         }
       }

@@ -2,6 +2,32 @@
   "$schema": "./projects-schema.json",
   "projects": [
     {
+      "title": "Sensa",
+      "desc": "An accessibility-focused communication tool designed to bridge interaction gaps by providing multimodal support.",
+      "href": "https://sensa-translator.vercel.app/",
+      "tags": [
+        "Accessibility",
+        "Communication",
+        "Web App"
+      ],
+      "year": "2026",
+      "featured": true,
+      "current": true
+    },
+    {
+      "title": "Umurava AI",
+      "desc": "An AI-powered talent screening engine designed to automate recruitment with transparent, natural-language justifications.",
+      "href": "https://umurava-screening.vercel.app/",
+      "tags": [
+        "AI",
+        "Recruitment",
+        "Web App"
+      ],
+      "year": "2025",
+      "featured": true,
+      "current": false
+    },
+    {
       "title": "Ibuka",
       "desc": "Digital platform preserving memory and history, providing accessible information and resources related to remembrance.",
       "href": "https://ibuka.main-95e.workers.dev/en/",
@@ -12,7 +38,8 @@
         "Design"
       ],
       "year": "2025",
-      "featured": true
+      "featured": true,
+      "current": false
     },
     {
       "title": "Dukora",
@@ -24,7 +51,8 @@
         "AI"
       ],
       "year": "2024",
-      "featured": true
+      "featured": true,
+      "current": false
     },
     {
       "title": "Muni Docs",
@@ -36,7 +64,8 @@
         "Open Source"
       ],
       "year": "2024",
-      "featured": false
+      "featured": false,
+      "current": false
     },
     {
       "title": "Jace",
@@ -49,7 +78,8 @@
         "TypeScript"
       ],
       "year": "2024",
-      "featured": true
+      "featured": true,
+      "current": false
     },
     {
       "title": "Lexi",
@@ -60,7 +90,8 @@
         "Open Source"
       ],
       "year": "2024",
-      "featured": false
+      "featured": false,
+      "current": false
     },
     {
       "title": "Tiza",
@@ -71,7 +102,8 @@
         "Software"
       ],
       "year": "2024",
-      "featured": true
+      "featured": true,
+      "current": false
     },
     {
       "title": "Vizit Africa",
@@ -82,7 +114,21 @@
         "TypeScript"
       ],
       "year": "2024",
-      "featured": false
+      "featured": true,
+      "current": false
+    },
+    {
+      "title": "Vizit Rwanda",
+      "desc": "Luxury travel and concierge service curating high-end expeditions in Rwanda with deep cultural heritage.",
+      "href": "https://vizit-rwanda-imigongo.vercel.app/",
+      "tags": [
+        "Design",
+        "Travel",
+        "Culture"
+      ],
+      "year": "2025",
+      "featured": false,
+      "current": false
     },
     {
       "title": "Reformation Chariot",
@@ -93,18 +139,8 @@
         "Education"
       ],
       "year": "2023",
-      "featured": false
-    },
-    {
-      "title": "Ishara",
-      "desc": "E-commerce platform for discovering and purchasing unique African art pieces.",
-      "href": "https://github.com/nkurunziza-saddy/ishara",
-      "tags": [
-        "E-commerce",
-        "TypeScript"
-      ],
-      "year": "2023",
-      "featured": false
+      "featured": false,
+      "current": false
     },
     {
       "title": "TipTap Editor",
@@ -115,7 +151,8 @@
         "UI/UX"
       ],
       "year": "2024",
-      "featured": false
+      "featured": false,
+      "current": false
     },
     {
       "title": "Oops",
@@ -126,7 +163,8 @@
         "Utility"
       ],
       "year": "2024",
-      "featured": false
+      "featured": false,
+      "current": false
     }
   ]
 }

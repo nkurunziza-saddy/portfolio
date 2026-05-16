@@ -2,7 +2,8 @@ import Link from "next/link";
 import PROJECTS_DATA from "@/projects.json";
 
 export default function Page() {
-  const featured = PROJECTS_DATA.projects.filter((p) => p.featured);
+  const current = PROJECTS_DATA.projects.filter((p) => p.current);
+  const featured = PROJECTS_DATA.projects.filter((p) => p.featured && !p.current);
 
   return (
     <main className="min-h-screen w-full max-w-2xl mx-auto px-6 py-24 md:py-32 flex flex-col gap-16 selection:bg-foreground selection:text-background">
@@ -14,6 +15,53 @@ export default function Page() {
           primarily with Typescript, Go, and Rust.
         </p>
       </header>
+
+      {/* Currently Working On */}
+      {current.length > 0 && (
+        <section className="flex flex-col gap-6">
+          <p className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground/60">currently working on</p>
+          <div className="flex flex-col gap-4">
+            {current.map((p) => (
+              <div key={p.title} className="flex justify-between items-baseline gap-4 group">
+                <Link
+                  href={p.href}
+                  target="_blank"
+                  className="text-sm font-medium text-foreground hover:text-muted-foreground transition-colors duration-300 inline-flex items-center gap-1.5"
+                >
+                  {p.title}
+                  <svg
+                    aria-hidden="true"
+                    role="img"
+                    width="10"
+                    height="10"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  >
+                    <path
+                      d="M3.5 8.5L8.5 3.5M8.5 3.5H4.5M8.5 3.5V7.5"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M3.5 8.5L5.5 6.5"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      opacity="0.3"
+                    />
+                  </svg>
+                </Link>
+                <span className="text-xs font-mono text-muted-foreground/60">{p.year}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Selected Work */}
       <section className="flex flex-col gap-6">
