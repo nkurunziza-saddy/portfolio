@@ -7,8 +7,3 @@ export const siteConfig = {
     github: "https://github.com/nkurunziza-saddy",
   },
 };
-
-export const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#09090b",
-};

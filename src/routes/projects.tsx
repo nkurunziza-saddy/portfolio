@@ -1,21 +1,22 @@
-"use client";
-
-import Link from "next/link";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import PROJECTS_DATA from "@/projects.json";
+import { Arrow } from "@/components/arrow";
+import { projects } from "@/lib/projects";
 
-const ALL_PROJECTS = PROJECTS_DATA.projects;
-const ALL_TAGS = [...new Set(ALL_PROJECTS.flatMap((p) => p.tags))];
+export const Route = createFileRoute("/projects")({
+  component: Projects,
+});
 
-export default function ProjectsPage() {
+const TAGS = ["all", ...new Set(projects.flatMap((p) => p.tags))];
+
+function Projects() {
   const [search, setSearch] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const filtered = ALL_PROJECTS.filter(
+  const query = search.toLowerCase();
+  const filtered = projects.filter(
     (p) =>
-      (!search ||
-        p.title.toLowerCase().includes(search.toLowerCase()) ||
-        p.desc.toLowerCase().includes(search.toLowerCase())) &&
+      (!query || p.title.toLowerCase().includes(query) || p.desc.toLowerCase().includes(query)) &&
       (!activeTag || p.tags.includes(activeTag))
   );
 
@@ -23,35 +24,14 @@ export default function ProjectsPage() {
     <main className="min-h-screen w-full max-w-2xl mx-auto px-6 py-24 md:py-32 selection:bg-foreground selection:text-background">
       <nav className="mb-16 flex gap-4">
         <Link
-          href="/"
+          to="/"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2 group"
         >
-          <svg
-            aria-hidden="true"
-            role="img"
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <Arrow
+            direction="left"
+            size={12}
             className="transition-transform duration-300 group-hover:-translate-x-0.5"
-          >
-            <path
-              d="M10 6H2M2 6L5 3M2 6L5 9"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M10 6H6"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.3"
-            />
-          </svg>
+          />
           home
         </Link>
       </nav>
@@ -65,15 +45,15 @@ export default function ProjectsPage() {
         />
 
         <div className="flex flex-wrap gap-x-5 gap-y-2">
-          {["all", ...ALL_TAGS].map((t) => {
+          {TAGS.map((t) => {
             const isAll = t === "all";
-            const isActive = (isAll && !activeTag) || t === activeTag;
+            const isActive = isAll ? !activeTag : t === activeTag;
 
             return (
               <button
                 type="button"
                 key={t}
-                onClick={() => setActiveTag(isAll ? null : t === activeTag ? null : t)}
+                onClick={() => setActiveTag(isAll || isActive ? null : t)}
                 className={`text-[13px] transition-colors duration-300 ${
                   isActive ? "text-foreground" : "text-muted-foreground/60 hover:text-foreground"
                 }`}
@@ -85,14 +65,13 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* Project List */}
       <div className="flex flex-col gap-12">
         {filtered.length === 0 && <p className="text-sm text-muted-foreground/60">no projects match your criteria.</p>}
 
         {filtered.map((p) => (
           <article key={p.title} className="flex flex-col gap-2.5 group">
             <div className="flex justify-between items-baseline gap-4">
-              <Link
+              <a
                 href={p.href}
                 target="_blank"
                 className="text-base font-medium text-foreground hover:text-muted-foreground transition-colors duration-300 inline-flex items-center gap-1.5"
@@ -103,33 +82,12 @@ export default function ProjectsPage() {
                     current
                   </span>
                 )}
-                <svg
-                  aria-hidden="true"
-                  role="img"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                <Arrow
+                  direction="up-right"
+                  size={12}
                   className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                >
-                  <path
-                    d="M3.5 8.5L8.5 3.5M8.5 3.5H4.5M8.5 3.5V7.5"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M3.5 8.5L5.5 6.5"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.3"
-                  />
-                </svg>
-              </Link>
+                />
+              </a>
               <span className="text-xs font-mono text-muted-foreground/50 shrink-0">{p.year}</span>
             </div>
 
