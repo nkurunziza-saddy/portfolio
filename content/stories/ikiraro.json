@@ -1,0 +1,52 @@
+{
+  "title": "Ikiraro",
+  "summary": "A procedural 3D figure that interprets text into sign language.",
+  "kind": "experiment",
+  "year": 2026,
+  "pinned": false,
+  "links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/nkurunziza-saddy/ikiraro"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**Ikiraro means bridge in Kinyarwanda.**\n\nType any text, and an animated figure signs it in American Sign Language. Words in its vocabulary are signed directly; anything else is fingerspelled letter by letter.",
+      "image": "",
+      "caption": "The figure signing hello, in the browser."
+    },
+    {
+      "heading": "Where it came from",
+      "body": "Ikiraro evolved from Sensa, a standalone translator I built earlier. Sensa worked, but required users to navigate to an external site just to access signing.\n\nWith Ikiraro, I stopped building destinations and started building primitives. The goal is a lightweight embed that any web platform can drop in to provide native signing.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Procedural bones",
+      "body": "There is no 3D mesh, character rig, or pre-rendered animation asset.\n\nA hand is modeled mathematically as twenty directional bone vectors. Because bones have fixed lengths, interpolating between hand poses never causes unnatural stretching or deformation.\n\nThe base alphabet poses are derived from landmark datasets of human hands. Depth ambiguity is resolved through geometric projection: a bone appearing foreshortened indicates it is pointing toward the camera.\n\nMotion is computed procedurally over time. Every frame can be calculated deterministically, making it trivial to scrub backward, pause, or link to a precise animation timestamp.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Secondary motion",
+      "body": "A moving hand attached to a static torso immediately looks mechanical. The rest of the body compensates for the hand's motion: shoulders rotate, the head tilts, and the gaze tracks the signing hand.\n\nIdle behaviors—subtle breathing, weight shifts, and blinking—keep the figure natural even when paused.\n\nThe body is rendered in dark values while the hands are bright, mirroring the standard practice of professional interpreters wearing black.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Two runtimes",
+      "body": "Because the rendering model is simply a vector list of coordinates, outputting the figure is decoupled from the renderer.\n\nIt runs in the browser via WebGL with studio lighting, and directly in the terminal using ANSI escape codes. You can even query it over `curl` to watch it sign in your shell.",
+      "image": "",
+      "caption": "The same figure in a terminal."
+    },
+    {
+      "heading": "Current limits",
+      "body": "The project is currently an architectural prototype.\n\nIt covers the alphabet and eight common signs: hello, me, you, yes, please, sorry, my, and thank you. It signs with a single hand and follows input word order—meaning it demonstrates transcription rather than full grammatical ASL translation.\n\nDirect review with fluent signers is the next milestone before expanding the vocabulary.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

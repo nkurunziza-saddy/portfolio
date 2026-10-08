@@ -1,0 +1,35 @@
+{
+  "title": "mizzle",
+  "summary": "Animated components and templates you buy once and own.",
+  "kind": "product",
+  "year": 2026,
+  "pinned": false,
+  "links": [],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**Honest origin story: I wanted money.**\n\nPeople pay for code that looks good. I can make code that looks good. The maths was right there.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "What's in it",
+      "body": "mizzle is a set of animated components for React, and twelve full templates. Pages that move the way the expensive ones do.\n\nYou pay once and you own the source. No subscription, no \"seats\", no email asking how your experience was.",
+      "image": "",
+      "caption": "A few of the templates."
+    },
+    {
+      "heading": "The ones from home",
+      "body": "Most template shops look like they were all made in the same three cities.\n\nSo some of mine carry patterns from home: **Imigongo**, the raised geometric art. **Agaseke**, the woven basket. **Igitenge**, the printed cloth. They sit next to ones called Chrome and Silk and hold their own.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "No deep lore",
+      "body": "Not everything needs a mission. Sometimes the why is just money, and the how is trying to make it worth paying for.\n\nThe shop isn't open yet.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

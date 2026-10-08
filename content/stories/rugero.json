@@ -1,0 +1,75 @@
+{
+  "title": "Rugero",
+  "summary": "Stock, money and an online shop, kept as one record.",
+  "kind": "product",
+  "year": 2026,
+  "pinned": true,
+  "links": [],
+  "sections": [
+    {
+      "heading": "",
+      "body": "> **rugero** · from the Kinyarwanda *urugero*\n> *noun.* A measure.\n\nRugero is a unified commerce platform that keeps inventory, accounting, and an online storefront in a single ledger. I have been building it across different iterations since secondary school.\n\nThese are the architectural decisions that shaped the product.",
+      "image": "",
+      "caption": "Home shows only the sections that apply to this business."
+    },
+    {
+      "heading": "Four versions",
+      "body": "It started with a local shopkeeper who wanted to sell phones online. I built him a simple website. Realizing how many small business owners couldn't afford custom software, that single website turned into a broader product. I was in S6, my final year of secondary school.\n\nThe first iteration was PHP. The second was Next.js. The third used independent microservices hosted on a self-managed VPS.[^1]\n\nEventually, I migrated everything to Cloudflare Workers as a unified service. Each rebuild removed architectural complexity rather than adding it.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The books come first",
+      "body": "Rugero starts with double-entry accounting; the storefront is built on top.\n\nEvery transaction has balanced debits and credits. Rugero will not write records that don't balance.\n\nEntries are immutable. Mistakes are corrected by recording reversing entries, keeping an accurate audit trail.\n\nThe shop owner never sees the ledger mechanics. They simply see stock levels, expenses, and net profit.",
+      "image": "",
+      "caption": "One sale, two sides, always equal."
+    },
+    {
+      "heading": "Your stock is your shop",
+      "body": "A business that already tracks its inventory has done the hard work of opening an online shop. Enabling the digital store immediately publishes available products at real-time quantities. There is no secondary catalogue and nothing to sync.\n\nCustomers checkout without mandatory account creation. They fill a cart, pay via mobile money, and receive a private link to track their order status.\n\nEach storefront is customizable: typography, color accents, layout templates, and corner radiuses. Every option is deliberately constrained to maintain visual quality.",
+      "image": "",
+      "caption": "The storefront reads the same records as the back office."
+    },
+    {
+      "heading": "Getting paid",
+      "body": "Checkout runs directly through mobile money.[^2] The buyer enters their phone number and approves the USSD push on their device.\n\nInventory is reserved during payment and released immediately if the session expires. Payment status is fully confirmed before an order records as complete.\n\nOnce a day, the merchant's accumulated balance automatically transfers to their phone.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The counter",
+      "body": "Sell is the point-of-sale screen designed to stay active all day.\n\nIt operates with full offline support. Transactions completed without an internet connection queue locally and synchronize once connectivity restores, with zero duplicate entries.\n\nA live activity feed sits on the side to verify instant customer payment confirmations.",
+      "image": "",
+      "caption": "The counter, with today's sales down the side."
+    },
+    {
+      "heading": "Small things",
+      "body": "- **Stock cannot drop below zero.** Attempting to sell unavailable inventory prompts the merchant to log incoming stock first.\n- **Unused features are absent,** rather than locked behind disabled interface states.\n- **Configuration settings exist only** when two real businesses would legitimately choose differently.\n- **The assistant prepares drafts.** Execution always requires human confirmation.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Architecture",
+      "body": "React, PostgreSQL, and Cloudflare Workers. One deployment, zero servers to manage. Interface audio and guided onboarding are powered by [inklu](/inklu).",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "What's next",
+      "body": "The objective is commerce infrastructure with Shopify's reliability, built on an uncompromising foundation: a store that can never disagree with its own books.[^3]",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": [
+    {
+      "note": "Self-hosting worked, but operating a server took time away from building the product."
+    },
+    {
+      "note": "Payments run in test mode until production gateway approval completes."
+    },
+    {
+      "note": "Upcoming capabilities: customer accounts, automated refunds, multi-currency support, and integrated e-invoicing."
+    }
+  ]
+}

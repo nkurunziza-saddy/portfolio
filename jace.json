@@ -1,10 +1,24 @@
 {
-  "files": [
+  "collections": [
+    {
+      "name": "Stories",
+      "path": "content/stories",
+      "description": "The pages for products, open source projects and experiments. Each kind is a group on the home page.",
+      "media": {
+        "folder": "public/stories"
+      }
+    },
     {
       "name": "Projects",
-      "description": "Manage projects",
-      "path": "projects.json",
-      "icon": "gear"
+      "path": "content/projects",
+      "description": "Links to older work, one file each. They show on the projects page."
+    }
+  ],
+  "files": [
+    {
+      "name": "Profile",
+      "path": "content/profile.json",
+      "description": "Your name, the introduction on the home page, your email and your social links."
     }
   ]
 }

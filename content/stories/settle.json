@@ -1,0 +1,41 @@
+{
+  "title": "settle",
+  "summary": "MTN MoMo payments, with the hard decisions already made.",
+  "kind": "open source",
+  "year": 2026,
+  "pinned": false,
+  "links": [],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**MoMo, minus the edge cases.**\n\nsettle is a developer toolkit for accepting MTN MoMo payments in your own code. It solves the hardest integration problems once, so you don't have to debug them across every new project.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "What the API leaves out",
+      "body": "Integrating MTN MoMo seems simple on paper. The API surface is small. The real complexity lies in everything it leaves undefined.\n\nA request times out, leaving you unsure if the customer was charged. Webhook notifications arrive unsigned, vulnerable to spoofing. API errors return empty payloads or 200 OK responses with error HTML inside.\n\nEven small syntax details cause silent failures—like an unescaped apostrophe blocking a transaction for a customer named Jean d'Amour.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Handled at the boundary",
+      "body": "settle handles these edge cases at the library boundary.\n\nIdempotent retries ensure customers are never double-charged. Inbound webhook callbacks are re-verified with MTN before your application ever sees them. Unclear error codes are translated into actionable diagnostics.\n\nIt supports all twelve countries where MoMo operates, configuring regional gateways automatically. It also ships with a local mock server for offline testing—critical when the official sandbox is unreachable.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Open infrastructure",
+      "body": "The frustrating part of payment APIs isn't just the edge cases; it's that every engineering team has to rediscover and solve them in isolation.\n\nsettle exists as shared infrastructure. If you find a new quirk or a better solution, the project is open for contributions.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Disclaimer",
+      "body": "settle is independent and open source. It is not affiliated with MTN, and it never touches funds directly: all transactions execute against your own merchant account.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

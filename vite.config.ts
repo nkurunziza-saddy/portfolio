@@ -7,7 +7,8 @@ export default defineConfig({
   fmt: {
     printWidth: 120,
     trailingComma: "es5",
-    ignorePatterns: ["src/routeTree.gen.ts", "projects.json"],
+    // content/ is written by Jace; formatting it here would only make its next save a bigger diff.
+    ignorePatterns: ["src/routeTree.gen.ts", "content/**"],
   },
   lint: {
     plugins: ["typescript", "unicorn", "oxc", "react", "jsx-a11y"],

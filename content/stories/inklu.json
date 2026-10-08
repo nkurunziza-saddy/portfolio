@@ -1,0 +1,44 @@
+{
+  "title": "inklu",
+  "summary": "Lightweight open-source libraries for web interfaces: audio, shortcuts, tours, and a dock.",
+  "kind": "open source",
+  "year": 2026,
+  "pinned": false,
+  "links": [
+    {
+      "label": "Docs",
+      "href": "https://inklu.vercel.app"
+    },
+    {
+      "label": "npm",
+      "href": "https://www.npmjs.com/org/inklu"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**Four things I wanted to stop rebuilding from scratch.**\n\nAudio feedback, keyboard shortcuts, onboarding tours, and side panels. I needed them in nearly every project, and existing packages were either too heavy or forced a visual theme.\n\nSo I extracted them into independent libraries.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The four",
+      "body": "- **audio** generates 29 tactile sounds directly in code. Not a single asset file or network request.\n- **keys** manages keyboard shortcuts with conflict detection and customizable bindings.\n- **tour** handles guided product walkthroughs with full keyboard and screen-reader support.\n- **dock** provides URL-synced side panels for dense applications.",
+      "image": "",
+      "caption": "Each library has its own docs and a playground."
+    },
+    {
+      "heading": "No design opinions",
+      "body": "They handle the logic and stay completely out of your styles. If you build clean, minimal interfaces, they drop in with zero resistance.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "In production",
+      "body": "They power the interfaces for [Rugero](/rugero) and [Jace](/jace). When an edge case shows up in production, it gets fixed at the source.\n\nThey currently see around 900 downloads a month on npm.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

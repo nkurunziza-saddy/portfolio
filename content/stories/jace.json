@@ -1,0 +1,46 @@
+{
+  "title": "Jace",
+  "summary": "Edit website content directly without touching git or code.",
+  "kind": "product",
+  "year": 2024,
+  "pinned": false,
+  "links": [
+    {
+      "label": "Live",
+      "href": "https://jace.nkurunziza.workers.dev"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**I wanted to update my portfolio without opening a terminal.**\n\nNearly every site I build stores its content in JSON or Markdown. Adding a project or fixing a typo meant pulling changes, editing raw files, committing, and waiting for CI to deploy. It was far too much friction for simple editorial updates.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "A schema-free CMS",
+      "body": "You drop a single configuration file into your repository specifying which files are editable. Jace reads your existing data and dynamically generates visual editing forms from it.\n\nThere are no schemas to declare upfront. Rename a key in your JSON, and the interface adapts automatically. When you save, Jace writes a clean commit straight back to GitHub.",
+      "image": "",
+      "caption": "A project's content, as a form."
+    },
+    {
+      "heading": "Zero runtime footprint",
+      "body": "The site itself never knows Jace exists.\n\nThere is no SDK to install, no script tag, and no external database holding a copy of your content. If you stop using Jace tomorrow, your site continues running without change. Delete the configuration file, and no trace remains.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Collaborators",
+      "body": "It works for non-technical teammates as well.\n\nShare a link, and collaborators authenticate with Google. They only see the specific content fields you have exposed—never the underlying source code or repository settings. They edit copy, you review the diff, and nobody has to text you screenshots of typos.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Trade-offs",
+      "body": "Traditional headless CMS platforms store your data on external infrastructure. File-based alternatives like Keystatic or Decap require heavy packages embedded inside your frontend.\n\nJace lives completely outside the repository boundary while treating your repository as the single source of truth.\n\nThis portfolio is edited with Jace.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

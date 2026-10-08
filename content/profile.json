@@ -1,0 +1,16 @@
+{
+  "name": "Saddy Nkurunziza",
+  "tagline": "Software engineer based in Kigali, Rwanda.",
+  "about": "I was born in Rwanda and live in Kigali.\n\nI'm currently studying and freelancing. Right now, my main focus is [Rugero](/rugero) an all-in-one system for small businesses to manage inventory, sales, and accounting.\n\nEarlier, I built [Ibuka](/ibuka), an interactive digital history project that brought in 21,000 visitors at launch.\n\nOn the side, I build and maintain lightweight open source libraries, including [inklu](/inklu), [Jace](/jace), and [settle](/settle).",
+  "email": "saddynkurunziza8@gmail.com",
+  "links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/nkurunziza-saddy"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/nk-saddy"
+    }
+  ]
+}

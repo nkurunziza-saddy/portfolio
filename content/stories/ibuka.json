@@ -1,0 +1,40 @@
+{
+  "title": "Ibuka",
+  "summary": "Rwanda's history, made to be moved through.",
+  "kind": "product",
+  "year": 2025,
+  "pinned": false,
+  "links": [
+    {
+      "label": "Live",
+      "href": "https://ibuka.main-95e.workers.dev/en/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**Our history, for people who weren't there.**\n\nI wanted younger generations to be able to see our history unfold, rather than only reading about it in textbooks.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "How it's told",
+      "body": "Ibuka is an interactive narrative you navigate with sound, moving through each scene at your own pace.\n\nIt doesn't begin in 1994. It begins with a colonial border drawn across a map, and with these words: *Before the cards. Before the labels. There were neighbors.*\n\nFrom there, it journeys through five chapters from the colonial era to the present day.",
+      "image": "",
+      "caption": "The opening scene."
+    },
+    {
+      "heading": "How it ends",
+      "body": "The final chapter is called The Weavers.\n\nIt closes with survivors sitting alongside the wives of perpetrators, weaving traditional *agaseke* baskets together. The woven pattern is named \"women holding hands\".",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The response",
+      "body": "I created it for my peers.\n\nOver 21,000 people visited during its launch week.\n\nNothing in it is gamified, and nothing is rushed.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

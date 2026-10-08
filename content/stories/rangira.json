@@ -1,0 +1,53 @@
+{
+  "title": "rangira",
+  "summary": "Audits a web page, or does a task on it, using only what a screen reader is told.",
+  "kind": "experiment",
+  "year": 2026,
+  "pinned": false,
+  "links": [],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**A web page, the way a screen reader hears it.**\n\nrangira audits a page, or carries out a task on it, using only the browser's accessibility tree: the same information a screen reader is given. No screenshots, no pixels, and the model never sees the DOM.\n\nIt runs two ways from one codebase: a command line, and a browser extension with a side panel.",
+      "image": "",
+      "caption": "Asking for the cheapest book on a real shop page."
+    },
+    {
+      "heading": "The problem",
+      "body": "Reading a page with a screen reader isn't the hard part. Comparing is.\n\nOn a shop page listing twenty books, finding the cheapest costs an expert screen reader user 145 key presses, 572 words of listening, and twenty prices held in memory. Just over three minutes. A sighted shopper does it in a glance.\n\nI wanted to hand that work to an agent that operates the page rather than summarizing it.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The audit",
+      "body": "The audit compares what a page shows with what it announces.\n\nIt reports four things a rule checker misses: visible text that never reaches the tree, controls that announce identically, controls with no name, and landmarks with nothing to tell them apart. It runs axe-core alongside.\n\nThere is no model involved and no key to set up. The same page gives the same report every time, with thresholds and exit codes, so it can fail a build.\n\nIt waits for a page to stop changing before reading it. Read the moment it loads, a client-rendered app is an empty element with no defects.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Doing a task",
+      "body": "Give it an objective on a live website and it works through the page: signing in, filling forms, comparing options, checking out. When finished, it answers in one sentence short enough to be spoken.\n\nThree things hold whatever the model does.\n\n- **It asks before it spends.** Anything that buys, submits or deletes is read back in one sentence naming the item and the price, and waits for a yes.\n- **Every fact is checked.** A price or a name in the answer must cite the node it was read from, and that citation is checked before you see the sentence. An answer that still fails is shown marked unverified.\n- **Clicked means clicked.** The element is asked whether it heard the click, and a field is read back after typing.\n\nLike a friend with your card who still calls before confirming the purchase.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The side panel",
+      "body": "The extension puts the same engine in a panel beside the page. Type a task, or press Speak and say it. The answer can be read aloud.\n\nConfirming a purchase is always a button, never a spoken yes. A misheard word is not a way to buy something.\n\nThe audit runs there too, on the tab beside it, and nothing leaves the browser.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "The rewrite",
+      "body": "It started as a Python project called a11y copilot, built over three days for a hackathon.\n\nThat version is the one with measurements. Against handing the whole page to the same model in a single prompt, the agent took correct answers from 45% to 100% and harmful errors from 31 to 1, all on a free tier.\n\nrangira is the rewrite in TypeScript. One core does the reading, judging and acting, and imports nothing from Node or the browser. The command line and the extension are thin shells around it. On six recorded pages it builds the same tree, line for line, as the Python version.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Current limits",
+      "body": "The agent in the rewrite has been run, not measured.\n\nWith a real model it signed in to a recorded shop, added the cheapest item after asking, and answered with a citation that checked out, in seven steps. One run shows it works. It is not a success rate.\n\nThe Python version's numbers are its own, and none of them carry over until the rewrite is measured itself. Speech hasn't been tested with a real microphone, and everything has only been run on Linux.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

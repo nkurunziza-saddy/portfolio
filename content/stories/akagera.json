@@ -1,0 +1,35 @@
+{
+  "title": "akagera",
+  "summary": "A day's drive through Akagera National Park, in the browser.",
+  "kind": "experiment",
+  "year": 2026,
+  "pinned": false,
+  "links": [],
+  "sections": [
+    {
+      "heading": "",
+      "body": "**Three.js, custom Blender models, and a day in Akagera.**\n\nYou get a safari truck, a camera, and one full day in the park.",
+      "image": "",
+      "caption": "Morning in the park."
+    },
+    {
+      "heading": "The simulation",
+      "body": "You drive. The simulation runs from sunrise to nightfall, and the environment transforms alongside it: the midday heat haze builds, herds migrate toward waterholes, and evening rain rolls across the plains.\n\nWildlife responds to vehicle noise and proximity. Approach too fast and animals scatter into the brush. Cut the engine and wait, and they stay.\n\nA scoring system critiques every photograph you take based on framing, subject behavior, distance, and lighting. The best shots earn a spot in your field journal.",
+      "image": "",
+      "caption": "A photo, and what the game thought of it."
+    },
+    {
+      "heading": "The ranger",
+      "body": "A park ranger stays on the radio with contextual advice and sharp reminders.\n\nLean on the horn and he radios in: *Easy on the horn. Anything that heard that is long gone, and you'll get nothing on film.* Stay out too late and he calls you back in before dark.\n\nOriginally built as an ambient tutorial, he quickly became the narrative anchor of the drive.",
+      "image": "",
+      "caption": ""
+    },
+    {
+      "heading": "Craft",
+      "body": "This was my playground for pushing browser-based 3D. I modeled the wildlife and terrain assets in Blender, then built the pipeline to stream them smoothly into three.js.\n\nI spent weeks tuning atmospheric scattering, lighting transitions, and animal behaviors, aiming for something that runs at 60 FPS while feeling genuinely serene.",
+      "image": "",
+      "caption": ""
+    }
+  ],
+  "notes": []
+}

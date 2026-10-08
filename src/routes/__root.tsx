@@ -1,66 +1,84 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
-import { siteConfig } from "@/lib/config";
+import { Page, SubpageHeader } from "@/components/layout";
+import { profile, SITE_URL, twitterHandle } from "@/lib/content";
 import styles from "@/styles.css?url";
 
 const KEYWORDS = [
   "saddy",
   "nkurunziza",
-  "job",
-  "react",
-  "engineer",
-  "fullstack",
-  "rust",
-  "go",
-  "next.js",
-  "js",
+  "kigali",
   "rwanda",
   "africa",
+  "rugero",
+  "jace",
+  "inklu",
+  "ibuka",
+  "engineer",
+  "react",
+  "fullstack",
 ];
 
-const OG_IMAGE = `${siteConfig.url}/og.png`;
+const OG_IMAGE = `${SITE_URL}/og.png`;
+
+const SEO_DESCRIPTION = `${profile.name} — software engineer based in Kigali, Rwanda. Selected work includes Rugero, Jace, inklu, and Ibuka.`;
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: siteConfig.name },
-      { name: "description", content: siteConfig.description },
-      { name: "author", content: "Nkurunziza Saddy" },
+      { title: profile.name },
+      { name: "description", content: SEO_DESCRIPTION },
+      { name: "author", content: profile.name },
       { name: "keywords", content: KEYWORDS.join(",") },
       { name: "creator", content: "saddy" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
-      { property: "og:url", content: siteConfig.url },
-      { property: "og:site_name", content: siteConfig.name },
-      { property: "og:title", content: siteConfig.name },
-      { property: "og:description", content: siteConfig.description },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:site_name", content: profile.name },
+      { property: "og:title", content: profile.name },
+      { property: "og:description", content: SEO_DESCRIPTION },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:creator", content: "@nk-saddy" },
-      { name: "twitter:title", content: siteConfig.name },
-      { name: "twitter:description", content: siteConfig.description },
+      ...(twitterHandle ? [{ name: "twitter:creator", content: twitterHandle }] : []),
+      { name: "twitter:title", content: profile.name },
+      { name: "twitter:description", content: SEO_DESCRIPTION },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Geist+Mono&family=Inter:wght@400..600&display=swap",
+      },
       { rel: "stylesheet", href: styles },
       { rel: "icon", href: "/favicon.ico" },
-      { rel: "author", href: siteConfig.links.github },
+      ...profile.links.map((link) => ({ rel: "me", href: link.href })),
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFound,
 });
 
 function RootComponent() {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="antialiased">
       <head>
         <HeadContent />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body>
         <Outlet />
         <Scripts />
       </body>
     </html>
+  );
+}
+
+function NotFound() {
+  return (
+    <Page>
+      <SubpageHeader title="Not found">There is nothing at this address.</SubpageHeader>
+    </Page>
   );
 }
