@@ -100,7 +100,7 @@ function Index({ headings }: { headings: string[] }) {
     <nav
       aria-label="On this page"
       style={{ "--i": 1 } as CSSProperties}
-      className="reveal mt-10 lg:fixed lg:top-36 lg:left-[calc(50%-500px)] lg:mt-0 lg:w-44"
+      className="reveal mt-10 lg:fixed lg:top-20 lg:left-[calc(50%-500px)] lg:mt-0 lg:w-44"
     >
       <p className="pb-2 text-faint-foreground">On this page</p>
       <ol className="space-y-1.5">
