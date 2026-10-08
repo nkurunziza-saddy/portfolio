@@ -15,13 +15,14 @@
     "rwanda",
     "saddy"
   ],
-  "homepage": "https://saddynkurunziza.vercel.app/",
+  "homepage": "https://saddy.me",
   "author": "Nkurunziza Saddy",
   "type": "module",
   "scripts": {
     "dev": "vp dev",
     "build": "vp build",
-    "preview": "vp preview"
+    "preview": "vp preview",
+    "deploy": "vp build && wrangler deploy"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.170.41",
@@ -37,7 +38,8 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "wrangler": "4.148.0"
   },
   "engines": {
     "node": ">=22.18.0"

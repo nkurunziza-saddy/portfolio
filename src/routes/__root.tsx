@@ -1,5 +1,5 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
-import { Page, SubpageHeader } from "@/components/layout";
+import { NotFound } from "@/components/not-found";
 import { profile, SITE_URL, twitterHandle } from "@/lib/content";
 import styles from "@/styles.css?url";
 
@@ -20,7 +20,7 @@ const KEYWORDS = [
 
 const OG_IMAGE = `${SITE_URL}/og.png`;
 
-const SEO_DESCRIPTION = `${profile.name} — software engineer based in Kigali, Rwanda. Selected work includes Rugero, Jace, inklu, and Ibuka.`;
+const SEO_DESCRIPTION = `just a guy.`;
 
 export const Route = createRootRoute({
   head: () => ({
@@ -72,13 +72,5 @@ function RootComponent() {
         <Scripts />
       </body>
     </html>
-  );
-}
-
-function NotFound() {
-  return (
-    <Page>
-      <SubpageHeader title="Not found">There is nothing at this address.</SubpageHeader>
-    </Page>
   );
 }

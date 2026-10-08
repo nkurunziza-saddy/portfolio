@@ -6,6 +6,10 @@
   "pinned": false,
   "links": [
     {
+      "label": "Live",
+      "href": "https://ikiraro.saddy.me"
+    },
+    {
       "label": "GitHub",
       "href": "https://github.com/nkurunziza-saddy/ikiraro"
     }

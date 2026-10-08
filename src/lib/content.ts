@@ -6,7 +6,7 @@ import profileJson from "../../content/profile.json";
  * out with a warning in the build log instead of breaking the page.
  */
 
-export const SITE_URL = "https://saddynkurunziza.vercel.app";
+export const SITE_URL = "https://saddy.me";
 
 /** What a story is, and so which group of the home page it is listed in. Written in content/ exactly like this. */
 const KINDS = ["product", "open source", "experiment"] as const;

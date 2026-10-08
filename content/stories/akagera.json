@@ -4,7 +4,12 @@
   "kind": "experiment",
   "year": 2026,
   "pinned": false,
-  "links": [],
+  "links": [
+    {
+      "label": "Live",
+      "href": "https://akagera.saddy.me"
+    }
+  ],
   "sections": [
     {
       "heading": "",

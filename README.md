@@ -10,7 +10,7 @@
 ### Content
 
 Everything the site says lives in `content/` and is edited from
-[Jace](https://jace.nkurunziza.workers.dev), which `jace.json` points at it:
+[Jace](https://jace.saddy.me), which `jace.json` points at it:
 
 - `content/profile.json`: name, the introduction, email and social links. Add a link there and it appears on the home page.
 - `content/stories/`: one file per product, open source project or

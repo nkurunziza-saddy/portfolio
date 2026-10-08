@@ -32,7 +32,22 @@ export default defineConfig({
   plugins: lazyPlugins(() => [
     tailwindcss(),
     tanstackStart({
-      prerender: { enabled: true, crawlLinks: true },
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        failOnError: true,
+        // `/404` is written once, as 404.html.
+        filter: (page: { path: string; prerender?: { outputPath?: string } }) =>
+          page.prerender?.outputPath === "/404.html" || page.path !== "/404",
+      },
+      // Nothing links to these, so name them.
+      pages: [
+        { path: "/sitemap.xml" },
+        { path: "/robots.txt" },
+        { path: "/404", prerender: { outputPath: "/404.html" } },
+      ],
+      // The stylesheet goes into each page's <head>, so first paint waits on no second request.
+      server: { build: { inlineCss: true } },
     }),
     react(),
   ]),
