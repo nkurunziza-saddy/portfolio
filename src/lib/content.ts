@@ -9,10 +9,9 @@ import profileJson from "../../content/profile.json";
 export const SITE_URL = "https://saddynkurunziza.vercel.app";
 
 /** What a story is, and so which group of the home page it is listed in. Written in content/ exactly like this. */
-export const KINDS = ["product", "open source", "experiment"] as const;
+const KINDS = ["product", "open source", "experiment"] as const;
 
 export type SocialLink = { label: string; href: string };
-export type Project = { title: string; href: string; year: number };
 export type StoryKind = (typeof KINDS)[number];
 export type StorySection = { heading: string; body: string; image: string; caption: string };
 export type Story = {
@@ -29,8 +28,6 @@ export type Story = {
   sections: StorySection[];
   notes: string[];
 };
-/** A row on the projects page: a story on this site, or a link out. */
-export type Listed = { title: string; year: number } & ({ slug: string } | { href: string });
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === "object" && value !== null && !Array.isArray(value);
@@ -62,13 +59,6 @@ function parseLink(value: unknown): SocialLink | null {
   if (!isRecord(value)) return null;
   const link = { label: text(value.label), href: webUrl(value.href) };
   return link.label && link.href ? link : null;
-}
-
-function parseProject(path: string, value: unknown): Project | null {
-  const entry = isRecord(value) ? value : {};
-  const project = { title: text(entry.title), href: webUrl(entry.href), year: year(entry.year) };
-  const missing = [!project.title && "title", !project.href && "href", !project.year && "year"];
-  return missing.some(Boolean) ? skip(path, missing) : project;
 }
 
 /** A section with nothing to read is dropped; its heading, image and caption are all optional. */
@@ -113,8 +103,6 @@ const email = text(saved.email);
 
 export const profile = {
   name: text(saved.name),
-  /** One line about the site, for search results and link previews. */
-  tagline: text(saved.tagline),
   /** The introduction on the home page: paragraphs, with links written as [Rugero](/rugero). */
   about: text(saved.about),
   email: /^\S+@\S+$/.test(email) ? email : "",
@@ -128,16 +116,7 @@ export const twitterHandle = profile.links
   .map((url) => `@${url.pathname.split("/")[1]}`)
   .find((handle) => handle.length > 1);
 
-const newestFirst = <T extends { title: string; year: number }>(a: T, b: T) =>
-  b.year - a.year || a.title.localeCompare(b.title);
-
-const projectEntries = import.meta.glob<unknown>("../../content/projects/*.json", { eager: true, import: "default" });
 const storyEntries = import.meta.glob<unknown>("../../content/stories/*.json", { eager: true, import: "default" });
-
-/** Links out to things made before they had a page here. Newest first, by name within a year. */
-export const projects = Object.entries(projectEntries)
-  .flatMap(([path, value]) => parseProject(path, value) ?? [])
-  .sort(newestFirst);
 
 /**
  * The pages of this site, one per product, open source project and experiment.
@@ -145,14 +124,6 @@ export const projects = Object.entries(projectEntries)
  */
 export const stories = Object.entries(storyEntries)
   .flatMap(([path, value]) => parseStory(path, value) ?? [])
-  .sort((a, b) => Number(b.pinned) - Number(a.pinned) || newestFirst(a, b));
+  .sort((a, b) => Number(b.pinned) - Number(a.pinned) || b.year - a.year || a.title.localeCompare(b.title));
 
 export const findStory = (slug: string) => stories.find((story) => story.slug === slug);
-
-const told = new Set(stories.map((story) => story.title.toLowerCase()));
-
-/** The projects page. Something with a story is listed once, as the story. */
-export const everything: Listed[] = [
-  ...stories.map(({ title, year, slug }) => ({ title, year, slug })),
-  ...projects.filter((project) => !told.has(project.title.toLowerCase())),
-].sort(newestFirst);

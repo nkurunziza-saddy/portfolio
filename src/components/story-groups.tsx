@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { type CSSProperties, useRef, useState } from "react";
-import { Arrow } from "@/components/arrow";
 import type { Story } from "@/lib/content";
 
 type Group = { title: string; stories: Story[] };
@@ -50,19 +49,13 @@ export function StoryGroups({ groups }: { groups: Group[] }) {
                 <Link
                   to="/$slug"
                   params={{ slug: story.slug }}
-                  className="group -mx-3 block rounded-[10px] px-3 py-2"
+                  className="-mx-3 block rounded-[10px] px-3 py-2"
                   // A tap also sends a mouse event, and would leave the highlight behind on a screen with no pointer to move it.
                   onMouseEnter={(event) => window.matchMedia("(hover: hover)").matches && moveTo(event.currentTarget)}
                   onFocus={(event) => moveTo(event.currentTarget)}
                   onBlur={hide}
                 >
-                  <span className="flex items-center gap-1.5">
-                    {story.title}
-                    <Arrow
-                      direction="right"
-                      className="text-muted-foreground opacity-0 -translate-x-0.5 transition duration-200 group-hover:opacity-100 group-hover:translate-0"
-                    />
-                  </span>
+                  <span className="block">{story.title}</span>
                   <span className="block text-muted-foreground text-pretty">{story.summary}</span>
                 </Link>
               </li>

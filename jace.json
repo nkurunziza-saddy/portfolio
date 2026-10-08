@@ -7,11 +7,6 @@
       "media": {
         "folder": "public/stories"
       }
-    },
-    {
-      "name": "Projects",
-      "path": "content/projects",
-      "description": "Links to older work, one file each. They show on the projects page."
     }
   ],
   "files": [

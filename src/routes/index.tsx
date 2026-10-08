@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Fragment } from "react";
 import { Page } from "@/components/layout";
 import { Prose } from "@/components/prose";
@@ -28,14 +28,7 @@ function Home() {
         <div className="mt-3">
           <Prose source={profile.about} />
         </div>
-        <p className="mt-4 text-muted-foreground text-pretty">
-          <Contact />
-          Everything I've made is{" "}
-          <Link to="/projects" className="link text-foreground">
-            here
-          </Link>
-          .
-        </p>
+        <Contact />
       </header>
 
       <StoryGroups groups={GROUPS} />
@@ -55,7 +48,7 @@ function Contact() {
   );
 
   return (
-    <>
+    <p className="mt-4 text-muted-foreground text-pretty">
       {links.length > 0 && "Find me on "}
       {links.map((link, i) => (
         <Fragment key={link.href}>
@@ -65,8 +58,8 @@ function Contact() {
           </Ext>
         </Fragment>
       ))}
-      {email && (links.length > 0 ? <>, or reach me by {mail}</> : <>Reach me by {mail}</>)}.{" "}
-    </>
+      {email && (links.length > 0 ? <>, or reach me by {mail}</> : <>Reach me by {mail}</>)}.
+    </p>
   );
 }
 

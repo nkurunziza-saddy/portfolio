@@ -12,15 +12,11 @@
 Everything the site says lives in `content/` and is edited from
 [Jace](https://jace.nkurunziza.workers.dev), which `jace.json` points at it:
 
-- `content/profile.json`: name, tagline, the introduction, email and social
-  links. Add a link there and it appears on the home page.
+- `content/profile.json`: name, the introduction, email and social links. Add a link there and it appears on the home page.
 - `content/stories/`: one file per product, open source project or
   experiment. Each is a page of its own, at the file's name: `rugero.json` is
   `/rugero`. Its `kind` (`product`, `open source` or `experiment`) is the
   group it is listed in on the home page.
-- `content/projects/`: one file per older project (`title`, `href`, `year`).
-  They are links out, listed on the projects page with the stories. A project
-  with the same title as a story is left out, so nothing is listed twice.
 
 A story has a `title`, a `summary` (the one line under its name), a `kind`, a
 `year`, `pinned` (`true` lists it first in its group on the home page), `links`
@@ -37,7 +33,7 @@ The introduction and each section's `body` are written as plain text:
 - `**strong**`, `*emphasis*`, `` `code` ``, `[a link](/rugero)` or
   `[a link](https://example.com)`, and `[^1]` for the first of the `notes`.
 
-`src/lib/content.ts` reads all three. An entry missing something it needs is
+`src/lib/content.ts` reads both. An entry missing something it needs is
 left out, with a warning in the build log that says what.
 
 ### Checks
